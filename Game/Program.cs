@@ -16,6 +16,14 @@ public class Program : GameWindow
         }
     }
 
+    protected override void OnLoad()
+    {
+        base.OnLoad();
+
+        GL.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+
+        //Code goes here
+    }
     protected override void OnUpdateFrame(FrameEventArgs args)
     {
         base.OnUpdateFrame(args);
@@ -24,5 +32,18 @@ public class Program : GameWindow
         {
             Close();
         }
+
+        GL.Clear(ClearBufferMask.ColorBufferBit);
+        GL
+
+        GL.DrawArrays(PrimitiveType.Quads, 100, 5);
+
+        SwapBuffers();
+    }
+    protected override void OnResize(ResizeEventArgs e)
+    {
+        base.OnResize(e);
+
+        GL.Viewport(0, 0, e.Width, e.Height);
     }
 }
